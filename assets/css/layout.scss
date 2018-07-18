@@ -16,7 +16,8 @@ $verde: #D6E673;
 $marrom: #9B6157;
 $fundo: #fdfcfa;
 
-$fonte-texto: 'Poppins',serif;
+$fonte-texto: 'Nunito',sans-serif;
+// $fonte-texto: 'Poppins',sans-serif;
 $fonte-titulo: 'Merienda',cursive;
 
 $arredondado: 10px;
@@ -76,13 +77,14 @@ html, body{ overflow-x: hidden }
 
 body {
 	font-size: 16px;
-	line-height: 1.9;
+	line-height: 1.7;
 	overflow-x: hidden; 
 	font-family: $fonte-texto;
 	font-weight: normal;
 	position: relative;
 	min-height: 100vh;
 	background: $fundo;
+	color: $texto;
 }
 
 h1, h2, h3, h4, h5 {
@@ -95,7 +97,8 @@ h1, h2, h3, h4, h5 {
 #header {
 	width: 100%;
 	position: relative;
-	min-height: 240px;
+	min-height: 280px;
+	margin-bottom: 50px;
 	
 	.fundo {
 		margin-top: -30px;
@@ -114,6 +117,47 @@ h1, h2, h3, h4, h5 {
 		img {width: 100%;}
 	}
 
+	button.menu {
+		margin: 20px 0 0 0;
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		@include transform(translateX(-50%));
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+		border:0;
+		outline: 0;
+		background: transparent;
+		font-family: $fonte-texto;
+		font-weight: 900;
+		text-transform: uppercase;
+		color: $texto;
+	    padding: 0;
+	    line-height: 1;
+	    letter-spacing: 0.3em;
+	    font-size: 13px;
+	    cursor: pointer;
+	    @include transition(color 0.3s ease-in-out, letter-spacing 0.3s ease-in-out);
+
+	    &:before, &:after {
+	    	content: "";
+	    	width: 144px;
+	    	height: 4px;
+	    	display: inline-block;
+	    	background: url('../img/div-menu.png') no-repeat center center;
+	    	vertical-align: middle;
+	    }
+
+	    &:before {margin-right: 10px;}
+	    &:after {margin-left: 8px;}
+
+	    &:hover {
+	    	color: darken($verde,35%);
+	    	letter-spacing: 0.5em;
+	    }
+	}
+
 	@media (max-width: 1280px) {
 		.fundo {
 			position: absolute;
@@ -126,9 +170,17 @@ h1, h2, h3, h4, h5 {
 		}
 	}
 
+	@media (max-width: 1160px) {
+		min-height: 245px;
+	}
+
+	@media (max-width: 960px) {
+		min-height: 220px;
+	}
+
+
 	@media (max-width: 480px) {
 		min-height: 200px;
-
 		.fundo {
 			height: 180px;
 		}
@@ -173,11 +225,17 @@ h1, h2, h3, h4, h5 {
 			}
 		}
 
+		.coluna-media { width: calc(50% - 20px);}
+		.coluna-full { width: 100%; }
+
 		.item {
 			padding: 30px 20px 20px;
-			width: calc(50% - 20px);
 			@include borda();
 			font-weight: 300;
+			margin: 0 0 50px;
+
+			&.ingredientes {background: url('../img/bg-itemreceita.png') no-repeat bottom right;}
+			&.modopreparo {background: url('../img/bg-itemreceita.png') no-repeat bottom right;}
 
 			h2 {
 				position: absolute;
@@ -188,7 +246,7 @@ h1, h2, h3, h4, h5 {
 				// background: $branco;
 				padding: 10px;
 				border-radius: $arredondado;
-				text-shadow: 2px 2px 0 $branco;
+				text-shadow: 2px 2px 1px $branco;
 				@include transform(translateY(-50%));
 
 				&:before {
@@ -232,24 +290,83 @@ h1, h2, h3, h4, h5 {
 					counter-increment: section;
 					content: counter(section) ".";
 					vertical-align: baseline;
+					font-family: $fonte-titulo;
 				}
 			}
 		}
 
 		figure {
-			width: calc(50% - 20px);
-			border-radius: $arredondado;
+			width: calc(100% - 6px); margin: 6px 0 30px 6px;
+			position: relative;
 
-			img {width: 100%;}
+			&:after {
+				border: 1px solid lighten($marrom,40%);
+				content: "";
+				width: 100%;
+				height: calc(100% - 9px);
+				position: absolute;
+				top: -6px;
+				left: -6px;
+				border-radius: $arredondado;
+			}
+
+			img {
+				width: 100%; position: relative;
+				border-radius: $arredondado;
+			}
 		}
 
 		blockquote {
-			background: $marrom;
 			border-radius: $arredondado;
 			color: $texto;
-			text-shadow: 1px 1px 0 lighten($marrom,10%);
-			margin: 20px 0;
-			padding: 20px;
+			text-shadow: 1px 1px 1px lighten($verde,15%);
+			letter-spacing: 0.025em;
+			margin: 0 0 30px;
+			padding: 0 20px;
+			width: calc(100% - 6px);
+			@include borda();
+
+			&:before {background: lighten($verde,20%);}
+		}
+
+
+		table {
+			width: 100%;
+			background: $branco;
+			border: 1px solid $marrom;
+			border-radius: 0 0 $arredondado $arredondado; 
+
+			caption { 
+				background: lighten($verde,20%); 
+				border: 1px solid $marrom;
+				border-bottom: 0;
+				padding: 10px;
+				color: $texto;
+				text-shadow: 1px 1px 1px lighten($verde,15%);
+				letter-spacing: 0.025em;
+				border-radius: $arredondado $arredondado 0 0;
+			}
+
+			tr {
+				td, th {
+					padding: 10px; 
+					text-align: center; 
+					// border-top: 1px solid $marrom;
+					// border-left: 1px solid $marrom;
+
+					// &:first-child {border-left: 0}
+				}
+
+				// &:first-child th { border-top: 0}
+
+				th {
+					text-shadow: 1px 1px 1px transparentize($texto,0.9);
+
+					&:nth-of-type(3n+1) {background: $amarelo}
+					&:nth-of-type(3n+2) {background: $vermelho}
+					&:nth-of-type(3n+3) {background: $verde}
+				}
+			}
 		}
 	}
 }
