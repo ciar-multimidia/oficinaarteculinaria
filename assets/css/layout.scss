@@ -332,32 +332,32 @@ h1, h2, h3, h4, h5 {
 
 		table {
 			width: 100%;
-			background: $branco;
-			border: 1px solid $marrom;
+			@include borda();
+			border-color: $marrom;
 			border-radius: 0 0 $arredondado $arredondado; 
 
 			caption { 
-				background: lighten($verde,20%); 
-				border: 1px solid $marrom;
-				border-bottom: 0;
-				padding: 10px;
+				// background: lighten($verde,20%); 
+				padding: 15px 10px 10px;
 				color: $texto;
 				text-shadow: 1px 1px 1px lighten($verde,15%);
 				letter-spacing: 0.025em;
-				border-radius: $arredondado $arredondado 0 0;
+				border-radius: $arredondado $arredondado 0 0 !important;
+				@include borda();
+				border-color: $marrom;
+				border-bottom: 0;
+
+				&:before {
+					background: lighten($verde,20%); 
+					border-radius: $arredondado $arredondado 0 0 !important;
+				}
 			}
 
 			tr {
 				td, th {
 					padding: 10px; 
 					text-align: center; 
-					// border-top: 1px solid $marrom;
-					// border-left: 1px solid $marrom;
-
-					// &:first-child {border-left: 0}
 				}
-
-				// &:first-child th { border-top: 0}
 
 				th {
 					text-shadow: 1px 1px 1px transparentize($texto,0.9);
