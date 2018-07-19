@@ -93,6 +93,15 @@ h1, h2, h3, h4, h5 {
 	color: $texto;
 }
 
+a, a:link, a:active, a:visited {
+	color: darken($amarelo,40%);
+	text-decoration: none;
+
+	.conteudo &:hover, .rodape &:hover {
+		border-bottom: 1px solid $vermelho;
+	}
+}
+
 ////////////////////////////////////// CABECALHO
 #header {
 	width: 100%;
@@ -191,45 +200,49 @@ h1, h2, h3, h4, h5 {
 ////////////////////////////////////// CONTEUDO
 .conteudo {
 	@include tam-container();
-	padding-bottom: 20px;
+	padding: 0 0 20px;
+	margin-bottom: 40px;
 
 	.receita {
 		width: 100%;
 		@include flex(space-between);
 
-		hgroup {
+		header {
 			width: 100%;
 			margin: 0 0 50px;
+			text-align: center;
 
 			h3 {
 				font-family: $fonte-texto;
-				font-size: 0.9em;
+				font-size: 12px;
 				font-weight: bold;
 				text-transform: uppercase;
 				letter-spacing: 0.1em;
 				color: darken($verde,35%);
-				margin: 0;
+				display: block;
 
-				span {
-					display: block;
-					font-size: 0.9em;
-					text-transform: none;
-					font-weight: normal;
-					font-style: italic;
+				&:before, &:after {
+					font-weight: 700;
+					display: inline-block;
+					margin: 0 8px;
+					color: darken($amarelo,30%);
+					content: "\2022";
+					line-height: 1;
+					vertical-align: text-top;
 				}
 			}
 
 			h1 {
 				margin: 10px 0;
-				line-height: 1.2
+				line-height: 1.2;
 			}
 		}
 
 		.coluna-media { width: calc(50% - 20px);}
-		.coluna-full { width: 100%; }
+		.coluna-full {  width: 100%;  }
 
 		.item {
-			padding: 30px 20px 20px;
+			padding: 30px;
 			@include borda();
 			font-weight: 300;
 			margin: 0 0 50px;
@@ -316,13 +329,33 @@ h1, h2, h3, h4, h5 {
 			}
 		}
 
-		blockquote {
+		.frase {
+			width: 100%;
+			text-align: center;
+			font-family: $fonte-texto;
+			font-size: 11px;
+			font-weight: bold;
+			text-transform: uppercase;
+			letter-spacing: 0.05em;
+			margin: 0 0 30px;
+			&:before, &:after {
+				font-weight: 700;
+				display: inline-block;
+				margin: 0 8px;
+				color: $vermelho;
+				content: "\2022";
+				line-height: 1;
+				vertical-align: text-top;
+			}
+		}
+
+		aside {
 			border-radius: $arredondado;
 			color: $texto;
 			text-shadow: 1px 1px 1px lighten($verde,15%);
 			letter-spacing: 0.025em;
 			margin: 0 0 30px;
-			padding: 0 20px;
+			padding: 10px 30px;
 			width: calc(100% - 6px);
 			@include borda();
 
@@ -330,43 +363,91 @@ h1, h2, h3, h4, h5 {
 		}
 
 
-		table {
-			width: 100%;
+		blockquote {
+			border-radius: $arredondado;
+			color: $texto;
+			text-shadow: 1px 1px 1px lighten($vermelho,15%);
+			letter-spacing: 0.025em;
+			margin: 0 0 30px;
+			padding: 10px 30px;
+			width: calc(100% - 6px);
 			@include borda();
-			border-color: $marrom;
-			border-radius: 0 0 $arredondado $arredondado; 
 
-			caption { 
-				// background: lighten($verde,20%); 
-				padding: 15px 10px 10px;
-				color: $texto;
-				text-shadow: 1px 1px 1px lighten($verde,15%);
-				letter-spacing: 0.025em;
-				border-radius: $arredondado $arredondado 0 0 !important;
-				@include borda();
-				border-color: $marrom;
-				border-bottom: 0;
+			&:before {background: lighten($vermelho,22%);}
+		}
 
-				&:before {
-					background: lighten($verde,20%); 
-					border-radius: $arredondado $arredondado 0 0 !important;
-				}
+
+		table {
+			width: calc(100% - 6px);
+			padding-bottom: 3px;
+			background: $branco;
+			border-spacing: 0;
+			font-size: 12px;
+			position: relative;
+
+			&:after {
+				border: 1px solid lighten($marrom,40%);
+				content: "";
+				width: 100%;
+				height: calc(100% + 9px);
+				position: absolute;
+				top: -6px;
+				left: -6px;
+				border-radius: $arredondado;
 			}
 
 			tr {
 				td, th {
-					padding: 10px; 
+					padding: 5px; 
 					text-align: center; 
 				}
 
 				th {
 					text-shadow: 1px 1px 1px transparentize($texto,0.9);
+					position: relative;
 
 					&:nth-of-type(3n+1) {background: $amarelo}
 					&:nth-of-type(3n+2) {background: $vermelho}
 					&:nth-of-type(3n+3) {background: $verde}
+
+					&:first-child {
+						border-top-left-radius: $arredondado;
+					}
+
+					&:last-child {
+						border-top-right-radius: $arredondado;
+					}
+
 				}
 			}
+		}
+	}
+}
+
+////////////////////////////////////// RODAPE
+
+.rodape {
+	margin: 40px 0 0;
+	width: 100%;
+	text-align: center;
+	font-family: $fonte-texto;
+	font-size: 12px;
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	color: darken($verde,35%);
+	background: url('../img/bg-footer.png') repeat-x center bottom;
+	padding: 0 0 75px;
+
+	span {
+		&:before, &:after {
+			font-weight: 700;
+			display: inline-block;
+			margin: 0 8px;
+			color: darken($amarelo,30%);
+			content: "\2022";
+			line-height: 1;
+			vertical-align: text-top;
 		}
 	}
 }
