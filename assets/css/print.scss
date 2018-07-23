@@ -1,0 +1,159 @@
+@charset "UTF-8";
+@import 'bourbon/bourbon';
+@import 'normalize';
+
+/****************************************
+ ----------------------------------------
+ * FORMATACOES *
+ ----------------------------------------
+ ****************************************/
+
+@page {
+  // margin: 2cm;
+  size: A4;
+  font-family: 'Calibri';
+}
+   
+body{
+  font-family: 'Calibri';
+  font-size: 14pt;
+}
+
+// links
+a {
+  color: black;
+  text-decoration: none;
+}
+
+// textos
+h1 {
+  font-size: 1cm;
+  margin:0 0 1cm;
+  text-align: center;
+}
+
+h2 {font-size: 0.6cm}
+h3 {font-size: 0.5cm}
+h4, h5, h6 {font-size: 1em}
+
+h1, h2, h3, h4, h5, h6 {margin-top: 0cm}
+
+
+em, i {font-style: italic;}
+strong, b {font-weight: bold;}
+
+p {
+  widows: 3; 
+  orphans: 3;
+}
+
+
+table {
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
+  display: block;
+  border-spacing: 0;
+  border: 0;
+  border-collapse: collapse;;
+  font-size: 0.9em;
+  
+  &.tabela-screen {display: none;}
+  &.tabela-print {display: block;}
+
+  tbody, thead {width: 100%}
+
+  th, td{
+    margin: 0;
+    border: 1px solid hsl(0,0,65%);
+    border-top-width: 0;
+    border-left-width: 0;
+
+    p {text-indent: 0}
+    &:last-child{
+      border-right-width: 0;
+    }
+  }
+
+  tr {page-break-inside:avoid;}
+
+  caption{
+    text-align: left;
+    line-height: 1.2;
+    color: gray;
+  }
+}
+
+blockquote {
+  margin: 1cm 0;
+  color: hsl(0,0,25%);
+  p {text-indent: 0}
+}
+
+
+figure {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  page-break-inside:avoid;
+
+  img {
+    max-width: 100%;
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+  }
+
+  button {display: none;}
+}
+
+
+hr {margin: 1cm 0;}
+
+
+/****************************************
+ ----------------------------------------
+ * LAYOUT *
+ ----------------------------------------
+ ****************************************/
+
+.conteudo {
+  width: 100%;
+
+  .receita {
+      width: 100%;
+
+      header { width: 100%; }
+
+      .coluna-media { 
+        width: calc(50% - 20px); 
+        float: left;
+
+        ul, ol {
+          li {padding: 0.1cm 0;}
+        }
+
+        &:nth-of-type(1) {margin-right: 38px}
+
+        .item {
+          padding: 0.5cm;
+          border: 0.05cm solid gray;
+          border-radius: 10px;
+          margin: 0 0 1cm;
+        }
+      }
+
+      .coluna-full { margin-top: 1cm; width: 100%; float: left; clear: both;}
+  }
+}
+
+
+/****************************************
+ ----------------------------------------
+ * OCULTAR *
+ ----------------------------------------
+ ****************************************/
+#header, 
+.conteudo .receita header h3, 
+#rodape
+{ display: none; }

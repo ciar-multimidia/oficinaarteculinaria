@@ -214,7 +214,7 @@ a, a:link, a:active, a:visited {
 
 			h3 {
 				font-family: $fonte-texto;
-				font-size: 12px;
+				font-size: 10px;
 				font-weight: bold;
 				text-transform: uppercase;
 				letter-spacing: 0.1em;
@@ -239,7 +239,7 @@ a, a:link, a:active, a:visited {
 		}
 
 		.coluna-media { width: calc(50% - 20px);}
-		.coluna-full {  width: 100%;  }
+		.coluna-full { margin-top: 30px; width: 100%;  }
 
 		.item {
 			padding: 30px;
@@ -248,7 +248,7 @@ a, a:link, a:active, a:visited {
 			margin: 0 0 50px;
 
 			&.ingredientes {background: url('../img/bg-itemreceita.png') no-repeat bottom right;}
-			&.modopreparo {background: url('../img/bg-itemreceita.png') no-repeat bottom right;}
+			&.modopreparo {background: url('../img/bg-itempreparo.png') no-repeat bottom right;}
 
 			h2 {
 				position: absolute;
@@ -327,6 +327,43 @@ a, a:link, a:active, a:visited {
 				width: 100%; position: relative;
 				border-radius: $arredondado;
 			}
+
+			button.btimprimir {
+				-webkit-appearance: none;
+				-moz-appearance: none;
+				appearance: none;
+				border: 1px solid lighten($marrom,40%);
+				border-radius: $arredondado / 2;
+				outline: 0;
+				background: $branco;
+				font-family: $fonte-texto;
+				font-weight: 900;
+				text-transform: uppercase;
+				padding: 3px 8px;
+				line-height: 1;
+				letter-spacing: 0.1em;
+				font-size: 11px;
+				cursor: pointer;	
+				color: $texto;	
+				position: absolute;
+				top: 10px;
+				right: 20px;
+				z-index: 2;
+
+				&:before {
+					content: '\2399';
+					display: inline-block;
+					margin-right: 8px;
+					color: $vermelho;
+				    vertical-align: sub;
+				    line-height: 1;
+				    font-size: 28px;
+				}		
+
+				&:hover {
+					color: darken($verde,35%);
+				}
+			}
 		}
 
 		.frase {
@@ -384,6 +421,9 @@ a, a:link, a:active, a:visited {
 			border-spacing: 0;
 			font-size: 12px;
 			position: relative;
+			margin-bottom: 20px;
+
+			&.tabela-print {display: none;}
 
 			&:after {
 				border: 1px solid lighten($marrom,40%);
@@ -426,7 +466,7 @@ a, a:link, a:active, a:visited {
 
 ////////////////////////////////////// RODAPE
 
-.rodape {
+#rodape {
 	margin: 40px 0 0;
 	width: 100%;
 	text-align: center;

@@ -16,7 +16,8 @@
 
 	<title>Receita de Almôndegas - Oficina de Arte Culinária</title>
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merienda:400|Nunito:400,400i,700,700i,900">
-	<link rel="stylesheet" href="assets/css/layout.css">
+	<link rel="stylesheet" href="assets/css/layout.css" media="screen">
+	<link rel="stylesheet" href="assets/css/print.css" media="print">
 </head>
 <body>
 
@@ -31,7 +32,7 @@
 	<article class="receita" itemscope itemtype="http://schema.org/Recipe">
 
 		<header>
-			<h3 itemprop="description">Gastronomia Saudável e Funcional</h3>
+			<h3>Capitulo 1</h3>
 			<h1 itemprop="name">Abobrinha Cocrante</h1>
 		</header>
 
@@ -60,6 +61,7 @@
 		<div class="coluna-media">
 			<figure>
 				<img itemprop="image" src="capitulo1/imagens/almondegas.jpg">
+				<button class="btimprimir">Imprimir receita</button>
 			</figure>
 
 			<div class="frase"><strong>Rendimento:</strong> 5 porções de 80 gramas (2 unidades)</div>
@@ -99,14 +101,14 @@
 	</article>
 </main>
 
-<footer class="rodape">
+<footer id="rodape">
 	<a href="capitulo1/abobrinha-crocante.html">Receita anterior</a>
 	<span>Página 4</span>
 	<a href="capitulo1/arroz-integral-com-curcuma.html">Próxima receita</a>
 </footer>
 
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<script src="assets/js/app.js"></script>
+<script src="assets/app.js"></script>
 
 </body>
 </html>
