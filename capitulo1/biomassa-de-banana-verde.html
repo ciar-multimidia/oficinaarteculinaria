@@ -24,7 +24,7 @@
 <header id="header">
 	<img class="fundo" src="assets/img/bg.png">
 	<a href="index.html" class="marca"><img src="assets/img/logo.png"></a>
-	<button class="menu">Menu</button>
+	<button class="menu" onclick="location.href='index.html'">Menu</button>
 </header>
 
 <main class="conteudo">
@@ -42,6 +42,8 @@
 				<ul>
 					<li itemprop="recipeIngredient">7 unidades de banana-nanica verde</li>
 				</ul>
+
+				<button class="btimprimir">Imprimir receita</button>
 			</div>
 
 			<div class="item modopreparo">
@@ -55,15 +57,13 @@
 				</ol>
 			</div>
 
-			<blockquote><p><strong>Atenção:</strong> o consumo de biomassa deve ser associado à uma ingestão adequada de água para não causar obstipação. Aconselha-se a ingestão de 1 colher de sopa ao dia.</p></blockquote>
 
 		</div>
 
 		<div class="coluna-media">
-			<figure>
-				<img itemprop="image" src="capitulo1/imagens/biomassa-de-banana-verde.jpg">
-				<button class="btimprimir">Imprimir receita</button>
-			</figure>
+
+			<blockquote><p><strong>Atenção:</strong> o consumo de biomassa deve ser associado à uma ingestão adequada de água para não causar obstipação. Aconselha-se a ingestão de 1 colher de sopa ao dia.</p></blockquote>
+
 
 			<div class="frase"><strong>Rendimento:</strong> aproximadamente 1 kg de massa pronta</div>
 
@@ -78,12 +78,12 @@
 				<thead>
 					<tr>
 						<th>Calorias</th>
-						<th>Carboidrato(g)</th>
+						<th>Carboidrato (g)</th>
 						<th>Proteína (g)</th>
-						<th>Lipídio(g)</th>
+						<th>Lipídio (g)</th>
 						<th>Fibra (g)</th>
-						<th>Sódio(mg)</th>
-						<th>Cálcio(mg)</th>
+						<th>Sódio (mg)</th>
+						<th>Cálcio (mg)</th>
 						<th>Ferro (mg)</th>
 						<th>Fósforo(mg)</th>
 						<th>Potássio(mg)</th>
@@ -110,7 +110,7 @@
 					</tr>
 				</tbody>
 			</table>
-			<table class="tabela-print">
+			<table class="tabela-print" aria-hidden="true">
 				<tr>
 					<th>Calorias</th>
 					<th>Carboidrato(g)</th>

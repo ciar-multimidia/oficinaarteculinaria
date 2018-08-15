@@ -16,7 +16,7 @@
    
 body{
   font-family: 'Calibri';
-  font-size: 14pt;
+  font-size: 12pt;
 }
 
 // links
@@ -27,7 +27,7 @@ a {
 
 // textos
 h1 {
-  font-size: 1cm;
+  font-size: 0.8cm;
   margin:0 0 1cm;
   text-align: center;
 }
@@ -50,16 +50,13 @@ p {
 
 table {
   text-align: center;
-  width: 100%;
-  margin: 0 auto;
-  display: block;
+  margin: auto;
   border-spacing: 0;
   border: 0;
   border-collapse: collapse;;
   font-size: 0.9em;
   
   &.tabela-screen {display: none;}
-  &.tabela-print {display: block;}
 
   tbody, thead {width: 100%}
 
@@ -68,6 +65,7 @@ table {
     border: 1px solid hsl(0,0,65%);
     border-top-width: 0;
     border-left-width: 0;
+    padding: 0.2cm;
 
     p {text-indent: 0}
     &:last-child{
@@ -93,6 +91,7 @@ blockquote {
 
 figure {
   width: 100%;
+  margin-top: 0;
   margin-left: auto;
   margin-right: auto;
   page-break-inside:avoid;
@@ -102,13 +101,17 @@ figure {
     margin: 0 auto;
     display: block;
     text-align: center;
+    border-radius: 10px;
   }
-
-  button {display: none;}
 }
 
+.btimprimir {display: none;}
 
 hr {margin: 1cm 0;}
+
+ul, ol {
+  margin: 0 0 0 0.5cm; padding: 0;
+}
 
 
 /****************************************
@@ -140,6 +143,13 @@ hr {margin: 1cm 0;}
           border: 0.05cm solid gray;
           border-radius: 10px;
           margin: 0 0 1cm;
+
+          table {
+            font-size: 0.8em;
+            th, td{ padding: 0cm;}
+          }
+
+          h3, h4, h5 {margin: 0.5cm 0 0 0}
         }
       }
 
@@ -154,6 +164,6 @@ hr {margin: 1cm 0;}
  ----------------------------------------
  ****************************************/
 #header, 
-.conteudo .receita header h3, 
+.conteudo .receita header h3, figure,
 #rodape
 { display: none; }

@@ -4,6 +4,15 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta content="index, follow" name="robots" />	
+	<meta property="og:url" content="index.html" />
+	<meta property="og:type" content="book" />
+	<meta property="og:title" content="Oficina de Arte Culinária - Início" />
+	<meta property="og:description" content="Livro de Receitas de Alimentação Saudável. Elaborado pela equipe de Unidade de Nutrição do Hospital das Clínicas da Universidade Federal De Goias" />
+	<meta property="og:site_name" content="Oficina de Arte Culinária">
+	<meta property="og:image" content="assets/img/imagem-padrao.png" />
+
 	<title>Oficina de Arte Culinária</title>
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merienda:400|Nunito:400,400i,700,700i,900">
 	<link rel="stylesheet" href="assets/css/layout.css" media="screen">
@@ -13,18 +22,36 @@
 <header id="header">
 	<img class="fundo" src="assets/img/bg.png">
 	<a href="index.html" class="marca"><img src="assets/img/logo.png"></a>
-	<button class="menu">Menu</button>
+	<!-- <button class="menu">Menu</button> -->
 </header>
 
 <main class="conteudo">
 
 	<article class="portal">
+		<div class="capitulo">
+			<div class="foto"></div>
+			<div class="info">
+				<h2>Capítulo 1</h2>
+				<h3>Gastronomia Saudável e Funcional</h3>
+				<button onclick="location.href='capitulo1/index.html'">Ver receitas</button>
+			</div>
+		</div>
+		<div class="capitulo">
+			<div class="foto"></div>
+			<div class="info">
+				<h2>Capítulo 2</h2>
+				<h3>Gastronomia para Alergias e <br> Intolerâncias Alimentares</h3>
+				<button onclick="location.href='capitulo2/index.html'">Ver receitas</button>
+			</div>
+		</div>
 	</article>
 
 </main>
 
 <footer id="rodape">
-
+	<a href="capitulo1/abobrinha-crocante.html">Começar livro</a>
+	<span>Oficina de Arte Culinária</span>
+	<a href="ficha-tecnica.html">Ficha técnica</a>
 </footer>
 
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>

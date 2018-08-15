@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<base href="../">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta content="index, follow" name="robots" />	
+	<meta property="og:url" content="mix-de-sementes.html" />
+	<meta property="og:type" content="book" />
+	<meta property="og:title" content="Receita de Mix de Sementes" />
+	<meta property="og:description" content="Livro de Receitas de Alimentação Saudável. Elaborado pela equipe de Unidade de Nutrição do Hospital das Clínicas da Universidade Federal De Goias" />
+	<meta property="og:site_name" content="Oficina de Arte Culinária">
+	<meta property="og:image" content="capitulo1/imagens/mix-de-sementes.jpg" />
+
+	<title>Receita de Mix de Sementes - Oficina de Arte Culinária</title>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merienda:400|Nunito:400,400i,700,700i,900">
+	<link rel="stylesheet" href="assets/css/layout.css" media="screen">
+	<link rel="stylesheet" href="assets/css/print.css" media="print">
+</head>
+<body>
+
+<header id="header">
+	<img class="fundo" src="assets/img/bg.png">
+	<a href="index.html" class="marca"><img src="assets/img/logo.png"></a>
+	<button class="menu" onclick="location.href='index.html'">Menu</button>
+</header>
+
+<main class="conteudo">
+
+	<article class="receita" itemscope itemtype="http://schema.org/Recipe">
+
+		<header>
+			<h3>Capitulo 1</h3>
+			<h1 itemprop="name">Mix de Sementes</h1>
+		</header>
+
+		<div class="coluna-media">
+			<div class="item ingredientes">
+				<h2>Ingredientes</h2>
+				<ul>
+					<li itemprop="recipeIngredient">1 colher de sopa de linhaça </li>
+					<li itemprop="recipeIngredient">4 castanhas do Pará </li>
+					<li itemprop="recipeIngredient">6 amêndoas cruas </li>
+					<li itemprop="recipeIngredient">1 colher de sopa de gergelim</li>
+				</ul>
+			</div>
+
+			<div class="item modopreparo">
+				<h2>Técnica de preparo</h2>
+				<ol itemprop="recipeInstructions">
+					<li>Triturar no liquidifi cador a linhaça, a castanha do Pará e as amêndoas;</li>
+					<li>Acrescentar o gergelim e bater rapidamente;</li>
+					<li>Colocar num vidro e guardar na geladeira;</li>
+					<li>Acrescentar em saladas para dar crocância</li>
+				</ol>
+			</div>
+		</div>
+
+		<div class="coluna-media">
+			<figure>
+				<img itemprop="image" src="capitulo1/imagens/mix-de-sementes.jpg">
+				<button class="btimprimir">Imprimir receita</button>
+			</figure>
+
+			<div class="frase"><strong>Rendimento:</strong>  8 porções de 10 gramas (1 colher de sopa)</div>
+
+			<aside><p><strong>Aspectos nutricionais de destaque:</strong> as castanhas e sementes são ricas em ácidos graxos insaturados e monoinsaturados, fibras e selênio. O gergelim é fonte de cálcio.</p></aside>
+		</div>
+
+		<div class="coluna-full">
+			<table itemprop="nutrition" itemscope itemtype="http://schema.org/NutritionInformation">
+				<thead>
+					<tr>
+						<th>Calorias</th>
+						<th>Carboidrato (g)</th>
+						<th>Proteína (g)</th>
+						<th>Lipídio (g)</th>
+						<th>Fibra (g)</th>
+						<th>Sódio (mg)</th>
+						<th>Cálcio (mg)</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td itemprop="calories">59,13</td>
+						<td itemprop="carbohydrateContent">2,81</td>
+						<td itemprop="proteinContent">2,71</td>
+						<td>1,69</td>
+						<td itemprop="fiberContent">5,30</td>
+						<td>0,25</td>
+						<td>29,39</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+	</article>
+</main>
+
+<footer id="rodape">
+	<a href="capitulo1/maionese-de-abacate.html">Receita anterior</a>
+	<span>Página 14</span>
+	<a href="capitulo1/molho-de-ervas-e-cottage.html">Próxima receita</a>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="assets/app.js"></script>
+
+</body>
+</html>

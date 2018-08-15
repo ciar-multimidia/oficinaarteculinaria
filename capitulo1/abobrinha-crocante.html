@@ -24,7 +24,7 @@
 <header id="header">
 	<img class="fundo" src="assets/img/bg.png">
 	<a href="index.html" class="marca"><img src="assets/img/logo.png"></a>
-	<button class="menu">Menu</button>
+	<button class="menu" onclick="location.href='index.html'">Menu</button>
 </header>
 
 <main class="conteudo">
@@ -71,20 +71,53 @@
 			<div class="frase"><strong>Rendimento:</strong> 10 porções de 40 gramas (1 colher de servir)</div>
 
 			<aside><p><strong>Aspectos nutricionais de destaque:</strong> opção de petisco com valor energético e teor de gorduras reduzidos.</p></aside>
+
+			<table class="tabela-print" aria-hidden="true">
+				<thead>
+					<tr>
+						<th>Calorias</th>
+						<th>Carboidrato (g)</th>
+						<th>Proteína (g)</th>
+						<th>Lipídio (g)</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td itemprop="calories">49,41</td>
+						<td itemprop="carbohydrateContent">5,90</td>
+						<td itemprop="proteinContent">1,68</td>
+						<td>2,20</td>
+					</tr>
+				</tbody>
+				<thead>
+					<tr>
+						<th>Fibra (g)</th>
+						<th>Sódio (mg)</th>
+						<th colspan="2">Cálcio (mg)</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td itemprop="fiberContent">0,78</td>
+						<td>0,81</td>
+						<td colspan="2">25,19</td>
+					</tr>
+				</tbody>
+			</table>
 		</div>
 
 		
 		<div class="coluna-full">
-			<table itemprop="nutrition" itemscope itemtype="http://schema.org/NutritionInformation">
+			<table class="tabela-screen" itemprop="nutrition" itemscope itemtype="http://schema.org/NutritionInformation">
 				<thead>
 					<tr>
 						<th>Calorias</th>
-						<th>Carboidrato(g)</th>
+						<th>Carboidrato (g)</th>
 						<th>Proteína (g)</th>
-						<th>Lipídio(g)</th>
+						<th>Lipídio (g)</th>
 						<th>Fibra (g)</th>
-						<th>Sódio(mg)</th>
-						<th>Cálcio(mg)</th>
+						<th>Sódio (mg)</th>
+						<th>Cálcio (mg)</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -105,7 +138,7 @@
 </main>
 
 <footer id="rodape">
-	<a href="apresentacao.html">Apresentação</a>
+	<a href="index.html">Menu Capítulo 1</a>
 	<span>Página 3</span>
 	<a href="capitulo1/almondegas.html">Próxima receita</a>
 </footer>

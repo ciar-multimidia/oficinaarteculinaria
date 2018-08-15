@@ -102,6 +102,52 @@ a, a:link, a:active, a:visited {
 	}
 }
 
+strong {font-weight: 700}
+
+img {max-width: 100%; vertical-align: bottom;}
+
+hr {
+	width: 80%;
+	height: 2px;
+	background: $amarelo;
+	border: 0; outline: 0;
+}
+
+ul, ol {
+	list-style: none;
+	counter-reset: section;
+	margin: 0; padding: 0;
+
+	li {
+		padding: 4px 0;
+
+		&:before {
+			font-weight: 700;
+			display: inline-block;
+			margin-right: 6px;
+			color: darken($amarelo,30%);
+		}
+	}
+	
+}
+ul {
+	li {
+		&:before {
+			content: "\2022";
+			vertical-align: middle;
+		}
+	}
+}
+ol {
+	li:before {
+		counter-increment: section;
+		content: counter(section) ".";
+		vertical-align: baseline;
+		font-family: $fonte-titulo;
+	}
+}
+
+
 ////////////////////////////////////// CABECALHO
 #header {
 	width: 100%;
@@ -112,6 +158,7 @@ a, a:link, a:active, a:visited {
 	.fundo {
 		margin-top: -30px;
 		width: calc(100% + 30px);
+		max-width: calc(100% + 30px);
 		@include transform(translateX(-20px));
 	}
 
@@ -129,6 +176,7 @@ a, a:link, a:active, a:visited {
 	button.menu {
 		margin: 20px 0 0 0;
 		position: absolute;
+		display: inline-flex;
 		bottom: 0;
 		left: 50%;
 		@include transform(translateX(-50%));
@@ -173,7 +221,8 @@ a, a:link, a:active, a:visited {
 			margin-top: 0;
 			top: -10%;
 			left: 50%;
-			width: auto;
+			width: 1160px;
+			max-width: 1160px;
 			height: 240px;
 			@include transform(translateX(-50%));
 		}
@@ -203,43 +252,49 @@ a, a:link, a:active, a:visited {
 	padding: 0 0 20px;
 	margin-bottom: 40px;
 
-	.receita {
-		width: 100%;
-		@include flex(space-between);
+	.coluna-media { 
+		width: calc(50% - 20px);
 
-		header {
+		@media (max-width: 700px) {
 			width: 100%;
-			margin: 0 0 50px;
-			text-align: center;
+		}
+	}
+	.coluna-full { margin-top: 30px; width: 100%;  }
 
-			h3 {
-				font-family: $fonte-texto;
-				font-size: 10px;
-				font-weight: bold;
-				text-transform: uppercase;
-				letter-spacing: 0.1em;
-				color: darken($verde,35%);
-				display: block;
+	header {
+		width: 100%;
+		margin: 0 0 50px;
+		text-align: center;
 
-				&:before, &:after {
-					font-weight: 700;
-					display: inline-block;
-					margin: 0 8px;
-					color: darken($amarelo,30%);
-					content: "\2022";
-					line-height: 1;
-					vertical-align: text-top;
-				}
-			}
+		h3 {
+			font-family: $fonte-texto;
+			font-size: 10px;
+			font-weight: bold;
+			text-transform: uppercase;
+			letter-spacing: 0.1em;
+			color: darken($verde,35%);
+			display: block;
 
-			h1 {
-				margin: 10px 0;
-				line-height: 1.2;
+			&:before, &:after {
+				font-weight: 700;
+				display: inline-block;
+				margin: 0 8px;
+				color: darken($amarelo,30%);
+				content: "\2022";
+				line-height: 1;
+				vertical-align: text-top;
 			}
 		}
 
-		.coluna-media { width: calc(50% - 20px);}
-		.coluna-full { margin-top: 30px; width: 100%;  }
+		h1 {
+			margin: 10px 0;
+			line-height: 1.2;
+		}
+	}
+
+	.receita {
+		width: 100%;
+		@include flex(space-between);
 
 		.item {
 			padding: 30px;
@@ -274,38 +329,8 @@ a, a:link, a:active, a:visited {
 				}
 			}
 
-			ul, ol {
-				list-style: none;
-				counter-reset: section;
-				margin: 0; padding: 0;
+			h3, h4, h5 {margin-bottom: 0}
 
-				li {
-					padding: 4px 0;
-
-					&:before {
-						font-weight: 700;
-						display: inline-block;
-						margin-right: 6px;
-						color: darken($amarelo,30%);
-					}
-				}
-			}
-			ul {
-				li {
-					&:before {
-						content: "\2022";
-						vertical-align: middle;
-					}
-				}
-			}
-			ol {
-				li:before {
-					counter-increment: section;
-					content: counter(section) ".";
-					vertical-align: baseline;
-					font-family: $fonte-titulo;
-				}
-			}
 		}
 
 		figure {
@@ -316,7 +341,7 @@ a, a:link, a:active, a:visited {
 				border: 1px solid lighten($marrom,40%);
 				content: "";
 				width: 100%;
-				height: calc(100% - 9px);
+				height: 100%;
 				position: absolute;
 				top: -6px;
 				left: -6px;
@@ -327,8 +352,9 @@ a, a:link, a:active, a:visited {
 				width: 100%; position: relative;
 				border-radius: $arredondado;
 			}
+		}
 
-			button.btimprimir {
+		button.btimprimir {
 				-webkit-appearance: none;
 				-moz-appearance: none;
 				appearance: none;
@@ -364,7 +390,6 @@ a, a:link, a:active, a:visited {
 					color: darken($verde,35%);
 				}
 			}
-		}
 
 		.frase {
 			width: 100%;
@@ -421,7 +446,7 @@ a, a:link, a:active, a:visited {
 			border-spacing: 0;
 			font-size: 12px;
 			position: relative;
-			margin-bottom: 20px;
+			margin: 0 0 20px 9px;
 
 			&.tabela-print {display: none;}
 
@@ -459,6 +484,160 @@ a, a:link, a:active, a:visited {
 					}
 
 				}
+			}
+		}
+
+		@media (max-width: 1110px) {
+			padding: 0 15px 0 20px;
+		}
+	}
+
+	.portal {
+		width: 100%;
+		@include flex(space-between);
+
+		.capitulo {
+			padding: 30px;
+			font-weight: 300;
+			margin: 0 0 50px;
+			width: calc(50% - 20px);
+			height: 400px;
+			text-align: center;
+			border-radius: $arredondado;
+			position: relative;
+			// overflow: hidden;
+
+			// &:before {
+			// 	content: "";
+			// 	width: 100%; height: 100%;
+			// 	position: absolute;
+			// 	top: 0; left: 0;
+			// 	background: transparentize($branco,0.6);
+			// 	display: block;
+			// }
+
+			&:after {
+				border: 1px solid $marrom;
+				content: "";
+				width: 100%; height:100%;
+				position: absolute;
+				top: -6px;
+				left: -6px;
+				border-radius: $arredondado;
+			}
+
+			.foto {
+				width: 100%; height: 100%;
+				position: absolute;
+				top: 0; left: 0;
+				display: block;
+				overflow: hidden;
+				opacity: 0.3;
+				border-radius: $arredondado;
+
+				&:before {
+					width: 100%; height: 100%;
+					position: absolute;
+					content: "";
+					top: 0; left: 0;
+					@include filter(blur(9px));
+					@include transform(scale(1.1));
+					background-position: bottom center;
+					background-size: cover;
+					background-repeat: no-repeat;
+					display: block;
+				}
+			}
+
+			.info {
+				position: absolute;
+				top: 50%;
+				width: 100%;
+				left: 0; z-index: 4;
+				padding: 0 20px;
+				@include transform(translateY(-50%));
+				// text-shadow: 1px 1px 3px $branco;
+
+				h2 {
+					font-size: 2.8em;
+					margin: 0;
+				}
+
+				h3 {
+					font-family: $fonte-texto;
+					font-weight: bold;
+				}
+
+				button {
+					-webkit-appearance: none;
+					-moz-appearance: none;
+					appearance: none;
+					border:0;
+					border-radius: $arredondado / 2;
+					outline: 0;
+					background: $branco;
+					font-family: $fonte-texto;
+					font-weight: 900;
+					text-transform: uppercase;
+					padding: 12px 30px;
+					line-height: 1;
+					letter-spacing: 0.1em;
+					font-size: 11px;
+					cursor: pointer;	
+					color: $texto;
+					box-shadow: 2px 2px 0 $marrom;
+					@include transition(background 0.3s ease-in-out, color 0.3s ease-in-out, border 0.3s ease-in-out, box-shadow 0.3s ease-in-out);
+
+					&:hover {
+						background: $vermelho;
+						color: $branco;
+					}
+				}
+			}
+
+			&:nth-of-type(1) .foto:before {background-image: url(../img/cap1.jpg);}
+			&:nth-of-type(2) {
+				.foto:before {background-image: url(../img/cap2.jpg);}
+				button:hover {background: darken($verde,25%); border-color: darken($verde,25%); box-shadow: 2px 2px 0 darken($verde,50%);}
+			}
+		}
+
+		@media (max-width: 1110px) {
+			padding: 0 15px 0 20px;
+		}
+
+		@media (max-width: 700px) {
+			.capitulo {
+				width: 100%;
+				height: 280px;
+			}
+		}
+	}
+
+	.pagina {
+		width: 100%;
+		padding: 30px;
+		@include borda();
+		font-weight: 300;
+		@include flex(space-between);
+
+		h1, .folha-rosto {width: 100%;}
+
+		.folha-rosto { text-align: center;}
+
+		.catalografica {
+			width: 100%;
+			@include flex(space-between);
+			border: 1px solid $texto; width: 100%; 
+			margin: 50px 0;
+
+			.titulo {width: 100%; font-weight: 700; border-bottom: 1px solid $texto; padding: 15px}
+
+			.codigo { width: 8%; padding: 15px 15px 0 15px; font-size: 1.1em; }
+			
+			.dados {width: 88%; text-align: left; padding: 15px 15px 0 15px;
+
+				.cdu {text-align: right;}
 			}
 		}
 	}
