@@ -152,7 +152,7 @@ ol {
 #header {
 	width: 100%;
 	position: relative;
-	min-height: 280px;
+	min-height: 300px;
 	margin-bottom: 50px;
 	
 	.fundo {
@@ -174,30 +174,26 @@ ol {
 		img {width: 100%;}
 	}
 
-	button.menu {
+	.menu {
 		margin: 20px 0 0 0;
 		position: absolute;
 		display: inline-flex;
 		bottom: 0;
 		left: 50%;
 		@include transform(translateX(-50%));
-		-webkit-appearance: none;
-		-moz-appearance: none;
-		appearance: none;
 		border:0;
 		outline: 0;
 		background: transparent;
 		font-family: $fonte-texto;
 		font-weight: 900;
 		text-transform: uppercase;
-		color: $texto;
+		color: $vermelho;
 	    padding: 0;
 	    line-height: 1;
 	    letter-spacing: 0.3em;
 	    font-size: 13px;
 	    cursor: pointer;
 	    white-space: nowrap;
-	    @include transition(color 0.3s ease-in-out, letter-spacing 0.3s ease-in-out);
 
 	    &:before, &:after {
 	    	content: "";
@@ -212,10 +208,13 @@ ol {
 	    &:before {margin-right: 10px;}
 	    &:after {margin-left: 8px;}
 
-	    &:hover {
-	    	color: darken($verde,35%);
-	    	letter-spacing: 0.5em;
+	    a {
+	    	color: $texto;
+	    	@include transition(color 0.3s ease-in-out);
+
+	    	&:hover {color: darken($verde,35%);}
 	    }
+
 	}
 
 	@media (min-width: 1281px) {
@@ -230,30 +229,30 @@ ol {
 			margin-top: 0;
 			top: -10%;
 			left: 50%;
-			width: 1200px;
-			max-width: 1200px;
+			width: 1300px;
+			max-width: 1300px;
 			height: 240px;
 			@include transform(translateX(-50%));
 		}
 	}
 
 	@media (max-width: 1160px) {
-		min-height: 245px;
+		min-height: 265px;
 	}
 
 	@media (max-width: 960px) {
-		min-height: 220px;
+		min-height: 240px;
 	}
 
 
 	@media (max-width: 480px) {
-		min-height: 200px;
+		min-height: 220px;
 
 		.fundo {
 			height: 180px;
 		}
 
-		button.menu {
+		.menu {
 		    
 			 &:before, &:after {
 			 	width: 40px;
