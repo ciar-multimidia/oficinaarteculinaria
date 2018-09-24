@@ -69,7 +69,7 @@ $arredondado: 10px;
 
 /****************************************
  ----------------------------------------
- * LAYOUT *
+ * LAYOUT **
  ----------------------------------------
  ****************************************/
 
@@ -389,7 +389,7 @@ ol {
 				cursor: pointer;	
 				color: $texto;	
 				position: absolute;
-				top: 10px;
+				top: -15px;
 				right: 20px;
 				z-index: 2;
 
@@ -463,7 +463,20 @@ ol {
 			border-spacing: 0;
 			font-size: 12px;
 			position: relative;
-			margin: 0 0 20px 9px;
+			margin: 75px 0 20px 9px;
+
+			caption {
+				position: absolute;
+				left: 50%;
+				top: -10px;
+				@include transform(translate(-50%,-100%));
+				text-transform: uppercase;
+				font-size: 11px;
+				font-weight: bold;
+				letter-spacing: 0.035em;
+				color: darken($amarelo,40%);
+				white-space: nowrap;
+			}
 
 			&.tabela-print {display: none;}
 
@@ -647,6 +660,7 @@ ol {
 			@include flex(space-between);
 			border: 1px solid $texto; width: 100%; 
 			margin: 50px 0;
+			font-size: 0.9em;
 
 			.titulo {width: 100%; font-weight: 700; border-bottom: 1px solid $texto; padding: 15px}
 
