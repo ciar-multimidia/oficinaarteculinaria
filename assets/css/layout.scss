@@ -217,6 +217,21 @@ ol {
 
 	}
 
+
+	body#home & {
+		min-height: 425px;
+		
+		a.marca {
+			width: 34%;
+			max-width: 434px;
+		}
+
+		@media (min-width: 1281px) {
+			min-height: 430px;
+		}
+	}
+
+
 	@media (min-width: 1281px) {
 		a.marca {
 			width: 290px; height: 176px;
@@ -238,10 +253,24 @@ ol {
 
 	@media (max-width: 1160px) {
 		min-height: 265px;
+
+		body#home & {min-height: 395px;}
 	}
 
 	@media (max-width: 960px) {
 		min-height: 240px;
+
+		body#home & {min-height: 330px;}
+	
+	}
+
+	@media (max-width: 700px) {
+		min-height: 240px;
+
+		body#home & {
+			min-height: 255px;
+		}
+	
 	}
 
 
@@ -258,6 +287,29 @@ ol {
 			 	width: 40px;
 			 	top: 4px;
 			 }
+		}
+
+		body#home & {
+			min-height: 290px;
+
+			.fundo {top: -6%;}
+
+			.menu {
+				white-space: normal;
+			    display: block;
+			    text-align: center;
+
+			    span {display: none;}
+
+			    &:before, &:after {
+			    	width: 100%;
+				    top: inherit;
+				    display: block;
+				    height: 18px;
+			    }
+
+			    a {display: block; margin: 6px 0;}
+			}
 		}
 	}
 }
