@@ -424,41 +424,45 @@ ol {
 		}
 
 		button.btimprimir {
-				-webkit-appearance: none;
-				-moz-appearance: none;
-				appearance: none;
-				border: 1px solid lighten($marrom,40%);
-				border-radius: $arredondado / 2;
-				outline: 0;
-				background: $branco;
-				font-family: $fonte-texto;
-				font-weight: 900;
-				text-transform: uppercase;
-				padding: 3px 8px;
-				line-height: 1;
-				letter-spacing: 0.1em;
-				font-size: 11px;
-				cursor: pointer;	
-				color: $texto;	
-				position: absolute;
-				top: -15px;
-				right: 20px;
-				z-index: 2;
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			appearance: none;
+			border: 1px solid lighten($marrom,40%);
+			border-radius: $arredondado / 2;
+			outline: 0;
+			background: $branco;
+			font-family: $fonte-texto;
+			font-weight: 900;
+			text-transform: uppercase;
+			padding: 3px 8px;
+			line-height: 1;
+			letter-spacing: 0.1em;
+			font-size: 11px;
+			cursor: pointer;	
+			color: $texto;	
+			position: absolute;
+			top: -15px;
+			right: 20px;
+			z-index: 2;
 
-				&:before {
-					content: '\2399';
-					display: inline-block;
-					margin-right: 8px;
-					color: $vermelho;
-				    vertical-align: sub;
-				    line-height: 1;
-				    font-size: 28px;
-				}		
+			&:before {
+				content: '\2399';
+				display: inline-block;
+				margin-right: 8px;
+				color: $vermelho;
+			    vertical-align: sub;
+			    line-height: 1;
+			    font-size: 28px;
+			}		
 
-				&:hover {
-					color: darken($verde,35%);
-				}
+			&:hover {
+				color: darken($verde,35%);
 			}
+
+			@media (max-width: 780px) {
+				display: none;
+			}
+		}
 
 		.frase {
 			width: 100%;
@@ -507,9 +511,19 @@ ol {
 			&:before {background: lighten($vermelho,22%);}
 		}
 
+		.wrap-tabela {
+			width: calc(100% - 6px);
+			
+
+			// @media (max-width: 780px) {
+			// 	overflow-x: auto;
+			// }
+		}
+
 
 		table {
-			width: calc(100% - 6px);
+			width: 100%;
+			// min-width: 500px;
 			padding-bottom: 3px;
 			background: $branco;
 			border-spacing: 0;
@@ -565,6 +579,56 @@ ol {
 						border-top-right-radius: $arredondado;
 					}
 
+				}
+			}
+
+
+			@media (max-width: 960px) {
+				&.tabela-maior {
+					width: 100%;
+					max-width: 480px;
+					margin-left: auto;
+					margin-right: auto;
+					display: block;
+					@include flex(space-between);
+
+					tr { 
+						display: block;
+						th:last-child {
+							border-top-right-radius: 0;
+							border-bottom-left-radius: $arredondado;
+						}
+					}
+					th, td { display: block;}
+
+					thead, tbody {
+						width: 50%;
+						display: block;
+						position: relative;
+					}
+				}
+			}
+
+			@media (max-width: 480px) {
+				width: 100%;
+				margin-left: auto;
+				margin-right: auto;
+				display: block;
+				@include flex(space-between);
+
+				tr { 
+					display: block;
+					th:last-child {
+						border-top-right-radius: 0;
+						border-bottom-left-radius: $arredondado;
+					}
+				}
+				th, td {display: block;}
+
+				thead, tbody {
+					width: 50%;
+					display: block;
+					position: relative;
 				}
 			}
 		}
@@ -674,6 +738,9 @@ ol {
 						background: $vermelho;
 						color: $branco;
 					}
+					
+					
+
 				}
 			}
 
